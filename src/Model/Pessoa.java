@@ -1,4 +1,4 @@
-package View;
+package Model;
 
 public class Pessoa {
 
@@ -53,5 +53,15 @@ public class Pessoa {
 
     public void setCnpj(String cnpj) {
         this.cnpj = cnpj;
+    }
+
+    @Override
+    public String toString() {
+        return "Pessoa{" +
+                "nome='" + nome + '\'' +
+                ", idade=" + idade +
+                ", cpf='" + cpf + '\'' +
+                ", cnpj='" + cnpj + '\'' +
+                '}';
     }
 }

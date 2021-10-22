@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/SistemaDeCadastro/SistemaDeCadastro.iml" filepath="$PROJECT_DIR$/SistemaDeCadastro/SistemaDeCadastro.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/Sistema_De_Cadastro.iml" filepath="$PROJECT_DIR$/.idea/Sistema_De_Cadastro.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Sistema_De_Cadastro.iml" filepath="$PROJECT_DIR$/Sistema_De_Cadastro.iml" />
     </modules>
   </component>
 </project>
