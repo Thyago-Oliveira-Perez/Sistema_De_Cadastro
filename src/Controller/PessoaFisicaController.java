@@ -14,7 +14,14 @@ public class PessoaFisicaController {
 
         PessoaFDao pessoaFDao = new PessoaFDao();
 
-        PessoaFDao.mostraDadosBanco();
+        System.out.println(PessoaFDao.mostraDadosBanco());
 
+    }
+
+    public void registraNoBanco(PessoaFisica pessoaF1){
+
+        PessoaFDao pessoaFDao = new PessoaFDao();
+
+        PessoaFDao.registraNoBanco(pessoaF1);
     }
 }

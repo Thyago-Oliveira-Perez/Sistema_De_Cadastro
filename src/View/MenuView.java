@@ -35,6 +35,9 @@ public class MenuView {
                 break;
 
             case 3:
+
+                pessoaFiscControl.mostraDadosBanco();
+
                 break;
 
             case 0:
@@ -60,7 +63,7 @@ public class MenuView {
 
         pessoaF1 = new PessoaFisica(nome, idade, cpf);
 
-        pessoaFiscControl.mostraDadosBanco();
+        pessoaFiscControl.registraNoBanco(pessoaF1);
 
     }
 
