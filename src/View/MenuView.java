@@ -14,6 +14,7 @@ public class MenuView {
     public void mostrarMenu() throws SQLException {
 
         PessoaFisicaController pessoaFiscControl = new PessoaFisicaController();
+        PessoaFisicaView pessoaFisicaView = new PessoaFisicaView();
 
         Scanner entrada = new Scanner(System.in);
 
@@ -26,44 +27,21 @@ public class MenuView {
         switch (opcao){
 
             case 1:
-
-                cadastraPessoaFisica(entrada, pessoaFiscControl);
-
+                pessoaFisicaView.cadastraPessoaFisica();
                 break;
-
             case 2:
                 break;
-
             case 3:
+                System.out.println(pessoaFisicaView.exibirDadosBanco());
 
-                pessoaFiscControl.mostraDadosBanco();
+                System.out.println(pessoaFisicaView.exibirDadosBanco().size());
 
                 break;
-
             case 0:
+                System.exit(0);
                 break;
-
             default:
         }
-
-    }
-
-    public void cadastraPessoaFisica(Scanner entrada, PessoaFisicaController pessoaFiscControl) throws SQLException {
-
-        PessoaFisica pessoaF1 = new PessoaFisica();
-
-        System.out.print("Nome:");
-        String nome = entrada.next();
-
-        System.out.print("Idade: ");
-        int idade = entrada.nextInt();
-
-        System.out.print("CPF:");
-        String cpf = entrada.next();
-
-        pessoaF1 = new PessoaFisica(nome, idade, cpf);
-
-        pessoaFiscControl.registraNoBanco(pessoaF1);
 
     }
 

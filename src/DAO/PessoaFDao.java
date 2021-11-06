@@ -20,11 +20,12 @@ public class PessoaFDao {
 
     }
 
-    public static List<PessoaFisica> mostraDadosBanco(){
+    List<PessoaFisica> listaDoBanco = new ArrayList();
+
+    public List<PessoaFisica> mostraDadosBanco(){
 
         try{
             String QuerrySQLSelect = "SELECT * FROM people";
-            List<PessoaFisica> listaDoBanco = new ArrayList();
             PreparedStatement preparedStatement = connection.prepareStatement(QuerrySQLSelect);
             ResultSet resultSet = preparedStatement.executeQuery(QuerrySQLSelect);
 
@@ -42,7 +43,7 @@ public class PessoaFDao {
         return null;
     }
 
-    public static void registraNoBanco(PessoaFisica pessoaF){
+    public static String cadastraNoBanco(List<PessoaFisica> pessoaFisicaList){
 
         try{
 
@@ -50,22 +51,26 @@ public class PessoaFDao {
 
             PreparedStatement preparedStatement = connection.prepareStatement(QuerrySQLInsert);
 
-            preparedStatement.setString(1, pessoaF.getNome());
-            preparedStatement.setInt(2, pessoaF.getIdade());
-            preparedStatement.setString(3, pessoaF.getCpf());
+//            preparedStatement.setString(1, pessoaFisicaList.get(0).getNome());
+//            preparedStatement.setInt(2, pessoaFisicaList.get(0).getIdade());
+//            preparedStatement.setString(3, pessoaFisicaList.get(0).getCpf());
+
+            for(int i = 0; i < pessoaFisicaList.size(); i++){
+                preparedStatement.setString(1, pessoaFisicaList.get(i).getNome());
+                preparedStatement.setInt(2, pessoaFisicaList.get(i).getIdade());
+                preparedStatement.setString(3, pessoaFisicaList.get(i).getCpf());
+            }
 
             preparedStatement.execute();
             preparedStatement.close();
+
+            return null;
 
         }catch (SQLException throwables){
 
             throwables.printStackTrace();
 
         }
-
-
-
-
+        return null;
     }
-
 }

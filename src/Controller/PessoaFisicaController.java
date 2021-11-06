@@ -4,24 +4,20 @@ import DAO.PessoaFDao;
 import Model.PessoaFisica;
 
 import java.sql.SQLException;
+import java.util.List;
 
 public class PessoaFisicaController {
 
-    public PessoaFisicaController() {
+    PessoaFDao pessoaFDao = new PessoaFDao();
+
+    public List<PessoaFisica> exibirDadosBanco(){
+
+        return pessoaFDao.mostraDadosBanco();
     }
 
-    public void mostraDadosBanco(){
+    public void registraNoBanco(List<PessoaFisica> pessoaFisicaList){
 
-        PessoaFDao pessoaFDao = new PessoaFDao();
+        PessoaFDao.cadastraNoBanco(pessoaFisicaList);
 
-        System.out.println(PessoaFDao.mostraDadosBanco());
-
-    }
-
-    public void registraNoBanco(PessoaFisica pessoaF1){
-
-        PessoaFDao pessoaFDao = new PessoaFDao();
-
-        PessoaFDao.registraNoBanco(pessoaF1);
     }
 }
